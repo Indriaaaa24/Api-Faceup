@@ -10,8 +10,4 @@ COPY . .
 
 ENV PYTHONUNBUFFERED=1
 
-ENV HOST 0.0.0.0
-
-EXPOSE 8000
-
-CMD ["python", "main.py"]
+CMD exec gunicorn --bind :$PORT --workers 1 --threads 8 --timeout 0 main:app
