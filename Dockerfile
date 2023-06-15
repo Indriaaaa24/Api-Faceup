@@ -17,7 +17,7 @@ RUN pip install --no-cache-dir -r requirements.txt
 ENV PORT 8080
 
 # # Expose the port on which the Flask app will run
-# EXPOSE $PORT
+EXPOSE $PORT
 
 # Set the entry point for the container
-CMD exec gunicorn --bind :$PORT --workers 1 --threads 8 --timeout 0 main:app
+CMD ["python","main.py"] 
