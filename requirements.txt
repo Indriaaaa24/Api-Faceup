@@ -8,3 +8,4 @@ PyJWT
 keras-preprocessing
 python-dotenv
 Flask-SQLAlchemy
+tensorflow
