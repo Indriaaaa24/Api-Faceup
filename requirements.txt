@@ -7,5 +7,6 @@ PyJWT
 keras-preprocessing
 python-dotenv
 Flask-SQLAlchemy
+PyMySQL
 tensorflow
 mysqlclient

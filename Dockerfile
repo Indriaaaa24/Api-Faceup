@@ -8,7 +8,7 @@ WORKDIR /workspace
 RUN apt-get update -y
 
 # Install Container Dependencies
-RUN apt-get install unzip curl gpg lsb-release python3-dev default-libmysqlclient-dev build-essential -y
+RUN apt-get install unzip curl gpg lsb-release python3-dev default-libmysqlclient-dev build-essential python-mysqldb -y
 
 # Copy the requirements file into the container
 COPY requirements.txt .
