@@ -157,19 +157,14 @@ def predict():
     img_result.save(img_byte_arr, format='JPEG')
     img_byte_arr.seek(0)
     
-    # Encode the image as base64 string
-    img_base64 = base64.b64encode(img_byte_arr.getvalue()).decode('utf-8')
-
     # Return the predicted class and image as response
     response = {
         'predicted_class': int(predicted_class),
-        'image': img_base64,
-        'class_jerawat' : class_get
+        'class_jerawat' : class_get,
+        'success': True,
+        'message': 'Prediction successful'
     }
     return jsonify(response)
 
 if __name__ == '__main__':
-    import os
-    
-    # app.run(threaded=True)
-    app.run(host="0.0.0.0", threaded=True, port=int(os.environ.get("PORT", 8000)))
+    app.run(debug=True)
