@@ -54,7 +54,7 @@ with app.app_context():
 
 @app.route('/')
 def hello():
-        return jsonify("Hello"), 200
+        return jsonify("FACEUP"), 200
 
 @app.route("/register", methods=["POST"])
 def RegisterUser():
@@ -134,6 +134,7 @@ def predict():
 
     # Resize the image to the expected input shape of the model
     img = img.resize((150, 150))
+    img = img.convert('RGB')
 
     # Preprocess the image (if needed)
     # ...
