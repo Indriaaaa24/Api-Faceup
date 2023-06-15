@@ -2,8 +2,10 @@ from flask import Flask, jsonify, request, session
 from flask_sqlalchemy import SQLAlchemy
 from werkzeug.security import generate_password_hash, check_password_hash
 from datetime import datetime, timedelta
+from dotenv import load_dotenv
 
 from tensorflow import keras
+load_dotenv()
 model = keras.models.load_model('acne_model_v2.h5')
 
 import jwt
@@ -13,6 +15,7 @@ import PIL.Image as Image
 import numpy as np
 import io
 import base64
+import os 
 
 db = SQLAlchemy()
 
@@ -29,7 +32,7 @@ class Token(db.Model):
     token = db.Column(db.String(255), unique=True, primary_key=True)
     
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://root@localhost/database-api'
+app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv("DB_URI")
 app.config['SECRET_KEY'] = 'secret'
 
 class_jerawat = { 
