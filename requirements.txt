@@ -2,14 +2,10 @@ Flask
 Werkzeug
 Pillow
 Keras
-PyMySQL
 numpy
 PyJWT
 keras-preprocessing
 python-dotenv
 Flask-SQLAlchemy
 tensorflow
-MySQL-python
-MySQL-python-connector
-pymysql
 mysqlclient
